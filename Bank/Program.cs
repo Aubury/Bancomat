@@ -35,29 +35,34 @@ namespace Bank
     {
         static void Main(string[] args)
         {
-            Management manag = new Management("Tom");
-            Collector collect = new Collector(1);
+          
             Bancomat account = new Bancomat(456,"str.Lubarskogo, 65");
+            Client client = new Client("Bob",account);
+            Management manag = new Management("Tom",account,client);
+            Collector collect = new Collector(1,account,manag);
+            
 
            // account.Adding += Show_Message;
-            account.Adding += manag.Message;
+            //account.Adding += manag.Message;
 
-            manag.colormess += ColorDisplay;
-            collect.colormess += _ColorDisplay;
-
-
-            //account.Withdrawn += Show_Message;
-            account.Withdrawn += collect.Message;
-            account.Withdrawn += manag.Message;
+            //manag.colormess += ColorDisplay;
+            //collect.colormess += _ColorDisplay;
 
 
-
+            ////account.Withdrawn += Show_Message;
+            //account.Withdrawn += collect.Message;
+            //account.Withdrawn += manag.Message;
 
             account.Put_money(1000);
+            client.Withdraw(500);
+            client.Withdraw(200);
+            client.Withdraw(350);
+
+          
            // Console.WriteLine(account);
-            account.Withdraw(150);
-            account.Withdraw(500);
-            account.Withdraw(600);
+            //account.Withdraw(150);
+            //account.Withdraw(500);
+            //account.Withdraw(600);
             Console.ReadLine();
         }
         static void ColorDisplay(object sender,string message)

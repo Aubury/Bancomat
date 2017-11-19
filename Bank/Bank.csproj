@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountEventArgs.cs" />
     <Compile Include="Bancomat.cs" />
+    <Compile Include="Client.cs" />
     <Compile Include="Collector.cs" />
     <Compile Include="Management.cs" />
     <Compile Include="Program.cs" />

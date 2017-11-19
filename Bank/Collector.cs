@@ -8,12 +8,23 @@ namespace Bank
 {
     class Collector
     {
-        public event ColorMessage colormess;
+      //  public event ColorMessage colormess;
+        Bancomat _bank;
+        Management _men;
+        
         public int ID_Collector { get; set; }
-        public Collector(int id) { ID_Collector = id; }
-        public void Message(object sender, string me)
+        public Collector(int id,Bancomat b, Management m)
         {
-            colormess(this,$"-----------------Collector \"{ID_Collector}\" get massege!-------------------\n" + me);
+            ID_Collector = id;
+            _bank = b;
+            _men = m;
+
+           
         }
+     
+        //public void Message(object sender, string me)
+        //{
+        //    colormess(this,$"-----------------Collector \"{ID_Collector}\" get massege!-------------------\n" + me);
+        //}
     }
 }
