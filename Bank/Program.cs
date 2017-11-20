@@ -47,6 +47,9 @@ namespace Bank
             client.Withdraw(200);
             client.Withdraw(300);
 
+            account.Put_money(500);
+            client.Withdraw(450);
+
             Console.ReadLine();
         }
      

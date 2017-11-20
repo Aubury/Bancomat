@@ -33,7 +33,7 @@ namespace Bank
         public void Put_money(int sum)
         {
             Current_amount += sum;
-            if (Adding != null) { Adding(this, new AccountEventArgs($"Amount {sum}$ put on account\n " , sum, Current_amount)); }
+            if (Adding != null) { Adding(this, new AccountEventArgs($"\n****************  Replenishment of ATM at {sum}$  ****************\n " , sum, Current_amount)); }
          }
       
     }

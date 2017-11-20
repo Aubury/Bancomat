@@ -41,7 +41,6 @@ namespace Bank
             if (Balance_Zero != null) {Balance_Zero(this, new AccountEventArgs($"---------------  Client  \"{Name}\" : withdraw {sum}$ -------------\n\n**************** Bancomat is empty ***************\n\n" + ToString(),_bank.Current_amount,sum)); }
             }
 
-           
             else
             {
                 if (Withdrawn != null)
