@@ -8,14 +8,15 @@ namespace Bank
 {
     class AccountEventArgs
     {
-        public string Message { get; }
-        public decimal Sum { get; }
-        public decimal Rest { get; }
-        public AccountEventArgs(string mess, decimal sum, decimal rest)
+        public readonly string Message;
+        public decimal  Rest;
+        public decimal  OperationSum;
+
+        public AccountEventArgs(string message, decimal rest, decimal operationSum)
         {
-            Message = mess;
-            Sum = sum;
+            Message = message;
             Rest = rest;
+            OperationSum = operationSum;
         }
     }
 }

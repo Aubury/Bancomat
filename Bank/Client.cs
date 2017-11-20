@@ -8,41 +8,47 @@ namespace Bank
 {
     class Client
     {
+        public event EventHandler<AccountEventArgs> Balance_Zero;
         public event EventHandler<AccountEventArgs> Withdrawn;
         Bancomat _bank;
         public string Name { get; set; }
-        public decimal Sum { get; }
         public Client(string name, Bancomat b)
         {
             Name = name;
             _bank = b;
+            
         }
         public void Message(object sender,AccountEventArgs e)
         {
-            Console.WriteLine(new AccountEventArgs($"-----------------Client\"{Name}\"----------------\n" + e.ToString(),e.Sum,e.Rest));
+            if (_bank.Current_amount - e.OperationSum == 0) { Console.WriteLine();}
+            if (_bank.Current_amount - e.OperationSum < 0) { Console.WriteLine(); }
+            else
+            {
+                Console.WriteLine(new AccountEventArgs($"-----------------Client\"{Name}\"----------------\n" + e.ToString(), e.Rest, e.OperationSum));
+            } 
         }
         public void Withdraw(int sum)
         {
+
+            if (_bank.Current_amount-sum < 0)
+            {
+                if (Balance_Zero != null) { Balance_Zero(this, new AccountEventArgs("\nNot enough money in the ATM\n" + ToString(), _bank.Current_amount, sum)); }
+            }
+           
             if (_bank.Current_amount - sum == 0)
             {
                 _bank.Current_amount -= sum;
-            if (Withdrawn != null) { Withdrawn(this, new AccountEventArgs("\nBancomat is empty\n" + ToString(), sum,_bank.Current_amount)); }
-             
-                // if(Withdrawn != null) {Withdrawn(this,$"\nAmount {sum}$ withdrawn from account\n "+ToString()); }
+            if (Balance_Zero != null) {Balance_Zero(this, new AccountEventArgs($"---------------  Client  \"{Name}\" : withdraw {sum}$ -------------\n\n**************** Bancomat is empty ***************\n\n" + ToString(),_bank.Current_amount,sum)); }
+            }
 
-            }
-            if(_bank.Current_amount-sum < 0)
-            {
-                if (Withdrawn != null) { Withdrawn(this, new AccountEventArgs("\nNot enough money on the account\n" + ToString(), sum, _bank.Current_amount)); }
-            }
+           
             else
             {
                 if (Withdrawn != null)
                 {
                     _bank.Current_amount -= sum;
-                    Withdrawn(this, new AccountEventArgs($"---------Client  \"{Name}\" : withdraw {sum}$ -------------", sum, _bank.Current_amount));
+                    Withdrawn(this, new AccountEventArgs($"---------------  Client  \"{Name}\" : withdraw {sum}$ -------------\n", _bank.Current_amount, sum));
 
-                    //Console.WriteLine($"---------Client  \"{Name}\" : withdraw {sum}$ -------------");
                 }
                
             }
