@@ -10,6 +10,6 @@ D:\ПРОГРОММИРОВАНИЕ\ПРОГРАММИРОВАНИЕ\2_семе�
 D:\ПРОГРОММИРОВАНИЕ\ПРОГРАММИРОВАНИЕ\2_семестр\C# Sharp\Урок_6\Bancomat\Bank\bin\Debug\Bank.exe.config
 D:\ПРОГРОММИРОВАНИЕ\ПРОГРАММИРОВАНИЕ\2_семестр\C# Sharp\Урок_6\Bancomat\Bank\obj\Debug\Bank.exe
 D:\ПРОГРОММИРОВАНИЕ\ПРОГРАММИРОВАНИЕ\2_семестр\C# Sharp\Урок_6\Bancomat\Bank\obj\Debug\Bank.pdb
-D:\ПРОГРОММИРОВАНИЕ\ПРОГРАММИРОВАНИЕ\2_семестр\C# Sharp\Урок_6\Bancomat\Bank\obj\Debug\Bank.csprojResolveAssemblyReference.cache
 D:\ПРОГРОММИРОВАНИЕ\ПРОГРАММИРОВАНИЕ\2_семестр\C# Sharp\Урок_6\Bancomat\Bank\bin\Debug\Bank.exe
 D:\ПРОГРОММИРОВАНИЕ\ПРОГРАММИРОВАНИЕ\2_семестр\C# Sharp\Урок_6\Bancomat\Bank\bin\Debug\Bank.pdb
+D:\ПРОГРОММИРОВАНИЕ\ПРОГРАММИРОВАНИЕ\2_семестр\C# Sharp\Урок_6\Bancomat\Bank\obj\Debug\Bank.csprojResolveAssemblyReference.cache

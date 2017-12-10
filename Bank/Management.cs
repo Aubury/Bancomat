@@ -18,28 +18,27 @@ namespace Bank
             _bank = b;
             _client = c;
             _bank.Adding += _bank_Adding;
-            _client.Balance_Zero += _client_Balance_Zero;
-            _client.Withdrawn += _client_Withdrawn;
-
+            _bank.Balance_Zero += _bankomat_Balance_Zero;
+            _bank.Withdrawn += _client_Withdrawn;
+           
         }
 
-        private void _client_Balance_Zero(object sender, AccountEventArgs e)
+        private void _bankomat_Balance_Zero(object sender, AccountEventArgs e)
         {
-            Console.WriteLine($"================= Management\"{Name}\" get massage =====================\n\n" + e.Message+"\n"+_bank.ToString() );
-           //throw new NotImplementedException();
+            Console.WriteLine($"\t   ============= Management\"{Name}\" get massage ==============\n\n" + e.Message+"\n"+_bank.ToString() );
+           
         }
 
         private void _client_Withdrawn(object sender, AccountEventArgs e)
         {
-            Console.WriteLine($"================= Management\"{Name}\" get massage =====================\n\n" + e.Message+"\n"+_bank.ToString() );
+            Console.WriteLine($"\t  ============ Management\"{Name}\" get massage ==============\n\n" + e.Message+"\n"+_bank.ToString() );
           
-            // throw new NotImplementedException();
         }
 
         private void _bank_Adding(object sender, AccountEventArgs e)
         {
-            Console.WriteLine($"================= Management\"{Name}\" get massage ======================\n" + e.Message+ "\n"+sender.ToString());
-            //throw new NotImplementedException();
+            Console.WriteLine($"\t   ============ Management\"{Name}\" get massage ============= \n\n" + e.Message+ "\n"+sender.ToString());
+           
         }
     }
 }

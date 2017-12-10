@@ -43,12 +43,16 @@ namespace Bank
             Collector collect = new Collector(1,account,manag,client);
 
             account.Put_money(1000);
-            client.Withdraw(500);
-            client.Withdraw(200);
-            client.Withdraw(300);
-
+            Console.WriteLine("=============================================================================\n\n");
+            account.Withdraw(500);
+            Console.WriteLine("==============================================================================\n\n");
+            account.Withdraw(200);
+            Console.WriteLine("===============================================================================\n\n");
+            account.Withdraw(300);
+            Console.WriteLine("===============================================================================\n\n");
             account.Put_money(500);
-            client.Withdraw(450);
+            Console.WriteLine("===============================================================================\n\n");
+            account.Withdraw(550);
 
             Console.ReadLine();
         }

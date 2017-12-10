@@ -20,13 +20,13 @@ namespace Bank
             _bank = b;
             _men = m;
             _cl = c;
-            _cl.Balance_Zero += _bank_Balance_Zero;
+            _bank.Balance_Zero+= _bank_Balance_Zero;
+           
         }
 
         private void _bank_Balance_Zero(object sender, AccountEventArgs e)
         {
-            Console.WriteLine($"================  Collector \"{ID_Collector}\" get massege!===================\n\n"+e.Message +"\n"+ _bank.ToString());
-            //throw new NotImplementedException();
-        }
+            Console.WriteLine($"\t  ================  Collector \"{ID_Collector}\" get massege!==============\n\n"+e.Message +"\n"+ _bank.ToString());
+         }
     }
 }
